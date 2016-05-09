@@ -1,0 +1,115 @@
+<div class="row detail-page">
+	<div class="row-100 margin-bottom-5">
+		<div class="col-m-80">
+			<div class="row-100">
+				<div class="col-label">
+					<span>First Name</span>
+					<span class="asterisk">*</span>
+				</div>
+				<div class="col-input">
+					<input type="text" name="firstName" class="form-control" ng-model="employee.firstName" ng-disabled="page.getPage().isDisplaySaveBtn" placeholder="Enter First Name" required autofocus />
+					<span class="asterisk" ng-show="productWidgetForm.firstName.$dirty && productWidgetForm.firstName.$invalid">
+						<span ng-show="productWidgetForm.firstName.$error.required">Employee's first name is required.</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-m-20 hide-mobile">
+			<div class="margin-id-m">
+				<div class="row-100">
+					<div class="col-label-id">
+						<span>ID #</span>
+					</div>
+					<div class="col-input-id">
+						<span class="form-control">{{employee.id}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-100 margin-bottom-5">
+		<div class="col-m-80">
+			<div class="row-100">
+				<div class="col-label">
+					<span>Last Name</span>
+					<span class="asterisk">*</span>
+				</div>
+				<div class="col-input">
+					<input type="text" name="lastName" class="form-control" ng-model="employee.lastName" ng-disabled="page.getPage().isDisplaySaveBtn" placeholder="Enter Last Name" required />
+					<span class="asterisk" ng-show="productWidgetForm.lastName.$dirty && productWidgetForm.lastName.$invalid">
+						<span ng-show="productWidgetForm.lastName.$error.required">Employee's last name is required.</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-m-20">
+			<div class="margin-space-m">
+				<div class="row-100">
+					<div class="col-label">
+						<span></span>
+					</div>
+					<div class="col-input">
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-100 margin-bottom-5">
+		<div class="col-m-80">
+			<div class="row-100">
+				<div class="col-label">
+					<span>Email</span>
+				</div>
+				<div class="col-input">
+					<input type="email" name="email" class="form-control" ng-model="employee.email" ng-disabled="page.getPage().isDisplaySaveBtn" placeholder="Enter Email" />
+					<span class="asterisk" ng-show="productWidgetForm.email.$dirty && productWidgetForm.email.$invalid">
+						<span ng-show="productWidgetForm.email.$error.required">Employee's Email is required.</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-m-20">
+			<div class="margin-space-m">
+				<div class="row-100">
+					<div class="col-label">
+						<span></span>
+					</div>
+					<div class="col-input">
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-100 margin-bottom-5">
+		<div class="col-m-80">
+			<div class="row-100">
+				<div class="col-label">
+					<span>Phone</span>
+				</div>
+				<div class="col-input">
+					<input type="text" name="phone" class="form-control" ng-model="employee.phone" ng-disabled="page.getPage().isDisplaySaveBtn" placeholder="Enter Phone" />
+					<span class="asterisk" ng-show="productWidgetForm.phone.$dirty && productWidgetForm.phone.$invalid">
+						<span ng-show="productWidgetForm.phone.$error.required">Employee's Phone is required.</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-m-20">
+			<div class="margin-space-m">
+				<div class="row-100">
+					<div class="col-label">
+						<span></span>
+					</div>
+					<div class="col-input">
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

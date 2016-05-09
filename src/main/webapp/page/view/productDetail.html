@@ -1,0 +1,91 @@
+<div class="row detail-page">
+	<div class="row-100 margin-bottom-5">
+		<div class="col-m-80">
+			<div class="row-100">
+				<div class="col-label">
+					<span>Employee</span>
+					<span class="asterisk">*</span>
+				</div>
+				<div class="col-input">
+					<select name="employeeId" class="form-control" ng-model="product.employee.id" ng-options="employee.id as employee.firstName + ' ' + employee.lastName for employee in employeeList" ng-disabled="page.getPage().isDisplaySaveBtn" required></select>
+					<span class="asterisk" ng-show="productWidgetForm.employee.$dirty && productWidgetForm.employee.$invalid">
+						<span ng-show="issueForm.assignedTo.$error.required">Employee is required.</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-m-20 hide-mobile">
+			<div class="margin-id-m">
+				<div class="row-100">
+					<div class="col-label-id">
+						<span>ID #</span>
+					</div>
+					<div class="col-input-id">
+						<span class="form-control">{{product.id}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-100 margin-bottom-5">
+		<div class="col-m-80">
+			<div class="row-100">
+				<div class="col-label">
+					<span>Date</span>
+					<span class="asterisk">*</span>
+				</div>
+				<div class="col-input">
+					<input type="text" name="date" class="form-control" datepicker-popup="{{datePicker.getFormat(0)}}" ng-model="product.date" ng-click="openDate($event)" is-open="openedDate" min-date="minDate" max-date="maxDate" datepicker-options="datePicker.getDateOptions()" ng-disabled="page.getPage().isDisplaySaveBtn" required />
+					<span class="input-group-addon show-cursor" ng-click="openDate($event)">
+						<span class="glyphicon glyphicon-calendar"></span>
+					</span>
+					<span class="asterisk" ng-show="productWidgetForm.date.$dirty && productWidgetForm.date.$invalid">
+						<span ng-show="productWidgetForm.date.$error.required">Date is required.</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-m-20">
+			<div class="margin-space-m">
+				<div class="row-100">
+					<div class="col-label">
+						<span></span>
+					</div>
+					<div class="col-input">
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-100 margin-bottom-5">
+		<div class="col-m-80">
+			<div class="row-100">
+				<div class="col-label">
+					<span>Widgets</span>
+					<span class="asterisk">*</span>
+				</div>
+				<div class="col-input">
+					<input type="text" name="widgets" class="form-control" ng-model="product.widgets" ng-disabled="page.getPage().isDisplaySaveBtn" required />
+					<span class="asterisk" ng-show="productWidgetForm.widgets.$dirty && productWidgetForm.widgets.$invalid">
+						<span ng-show="productWidgetForm.widgets.$error.required">Widgets is required.</span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-m-20">
+			<div class="margin-space-m">
+				<div class="row-100">
+					<div class="col-label">
+						<span></span>
+					</div>
+					<div class="col-input">
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

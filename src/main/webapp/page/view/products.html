@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="text-center">
+		<div class="margin-bottom-12">
+			<button type="button" class="btn btn-default" ng-disabled="curPage == 0" ng-click="curPage=curPage-1">&lt; PREV</button>
+			<span>Page {{curPage + 1}} of {{ numberOfPages() }}</span>
+			<button type="button" class="btn btn-default" ng-disabled="curPage >= productsList.length/pageSize - 1" ng-click="curPage = curPage+1">NEXT &gt;</button>
+		</div>
+	</div>
+</div>
+<div class="table-responsive">
+	<table class="table table-striped">
+		<tr class="info">
+			<th><span>#</span></th>
+			<th><span>Employee ID</span></th>
+			<th><span>Date</span></th>
+			<th><span>Widgets</span></th>
+		</tr>
+		<tr ng-repeat="product in productsList | paginationFilter: curPage * pageSize | limitTo: pageSize">
+			<td><span><a href="#/products/{{product.id}}">{{product.id}}</a></span></td>
+			<td><span>{{product.employeeId}}</span></td>
+			<td><span>{{product.date | date:'MM/dd/yyyy'}}</span></td>
+			<td><span>{{product.widgets}}</span></td>
+		</tr>
+	</table>
+</div>
