@@ -23,6 +23,15 @@
 		<span class="font-size-16">Average widget production per employee by week</span>
 	</div>
 	<div class="panel-heading">
+		<div class="row">
+			<div class="text-center">
+				<div class="margin-bottom-12">
+					<button type="button" class="btn btn-default" ng-disabled="curPage == 0" ng-click="curPage=curPage-1">&lt; PREV</button>
+					<span>Page {{curPage + 1}} of {{ numberOfPages() }}</span>
+					<button type="button" class="btn btn-default" ng-disabled="curPage >= aveWidgetProductPerEmployeeWeek.length/pageSize - 1" ng-click="curPage = curPage+1">NEXT &gt;</button>
+				</div>
+			</div>
+		</div>
 		<div class="table-responsive">
 			<table class="table table-striped">
 				<tr class="info">
@@ -30,7 +39,7 @@
 					<th><span>Week of Year</span></th>
 					<th><span>Widgets Average</span></th>
 				</tr>
-				<tr ng-repeat="report in aveWidgetProductPerEmployeeWeek">
+				<tr ng-repeat="report in aveWidgetProductPerEmployeeWeek | paginationFilter: curPage * pageSize | limitTo: pageSize">
 					<td><span>{{report.employeeId}}</span></td>
 					<td><span>{{report.week}}</span></td>
 					<td><span>{{report.aveWidget}}</span></td>

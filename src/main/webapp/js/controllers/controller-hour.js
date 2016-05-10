@@ -179,6 +179,7 @@ productWidgetApp.controller("HourDetailController", function($scope, $routeParam
 		title : "Hour Detail",
 		isCreateNew : isCreateNew,
 		createLabel : createLabel,
+		isReportPage : isUpdateHour,
 		isDisplaySaveBtn : isUpdateHour
 	},
 	doNewAction = function() {

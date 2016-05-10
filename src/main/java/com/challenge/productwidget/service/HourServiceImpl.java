@@ -38,8 +38,14 @@ public class HourServiceImpl implements DataService<Hour> {
 			hourMap = new HashMap<Long, Hour>();
 			nextId = new Long(1);
 		}
-		hour.setId(nextId);
-		nextId += 1;
+		if (hour.getId() != null && hourMap.get(hour.getId()) != null) {
+			//Update
+			hourMap.remove(hour.getId());
+		} else {
+			//Create
+			hour.setId(nextId);
+			nextId += 1;
+		}
 		hourMap.put(hour.getId(), hour);
 		return hour;
 	}

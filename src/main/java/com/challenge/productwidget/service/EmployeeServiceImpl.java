@@ -25,18 +25,24 @@ public class EmployeeServiceImpl implements DataService<Employee> {
 			employeeMap = new HashMap<Long, Employee>();
 			nextId = new Long(1);
 		}
-		employee.setId(nextId);
-		nextId += 1;
+		if (employee.getId() != null && employeeMap.get(employee.getId()) != null) {
+			//Update
+			employeeMap.remove(employee.getId());
+		} else {
+			//Create
+			employee.setId(nextId);
+			nextId += 1;
+		}
 		employeeMap.put(employee.getId(), employee);
 		return employee;
 	}
 	
 	static {
 		Employee employee = new Employee();
-		employee.setFirstName("Pao");
-		employee.setLastName("Im");
-		employee.setEmail("paoim@yahoo.com");
-		employee.setPhone("9527372950");
+		employee.setFirstName("Demo");
+		employee.setLastName("Test");
+		employee.setEmail("demo@test.com");
+		employee.setPhone("9523322123");
 		save(employee);
 	}
 	

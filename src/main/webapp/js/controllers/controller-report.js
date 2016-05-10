@@ -39,9 +39,25 @@ productWidgetApp.controller("ReportController", function($scope, $modal, $log, $
 	})();
 	
 	(function() {
+		//Show Animation
+		$scope.$emit('LOADPAGE');
+		
+		//Pagination configure
+		$scope.curPage = 0;
+		$scope.pageSize = 50;
+		$scope.aveWidgetProductPerEmployeeWeek = [];
+		$scope.numberOfPages = function() {
+			return 1;
+		};
+		
 		reportService.getAveWidgetProductPerEmployeeWeek(function(data, message) {
 			$scope.aveWidgetProductPerEmployeeWeek = data;
-			console.log(data);
+			$scope.numberOfPages = function() {
+				return Math.ceil($scope.aveWidgetProductPerEmployeeWeek.length / $scope.pageSize);
+			};
+			
+			//Hide Animation
+			$scope.$emit('UNLOADPAGE');
 		});
 	})();
 	

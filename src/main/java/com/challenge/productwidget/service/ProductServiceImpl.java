@@ -45,8 +45,14 @@ public class ProductServiceImpl implements DataService<Product>, FilterService<P
 			productMap = new HashMap<Long, Product>();
 			nextId = new Long(1);
 		}
-		product.setId(nextId);
-		nextId += 1;
+		if (product.getId() != null && productMap.get(product.getId()) != null) {
+			//Update
+			productMap.remove(product.getId());
+		} else {
+			//Create
+			product.setId(nextId);
+			nextId += 1;
+		}
 		productMap.put(product.getId(), product);
 		return product;
 	}

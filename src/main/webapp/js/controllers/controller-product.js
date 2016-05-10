@@ -100,7 +100,7 @@ productWidgetApp.controller("ProductDetailController", function($scope, $routePa
 	var productId = utilService.getId($routeParams.productId),
 	employeeList = employeeService.getEmployeeList(),
 	product = {id : productId},
-	createLabel = "Save Hour",
+	createLabel = "Save Product",
 	isUpdateProduct = false,
 	isCreateNew = true;
 	
@@ -168,9 +168,10 @@ productWidgetApp.controller("ProductDetailController", function($scope, $routePa
 	
 	var newPage = {
 		isDetailPage : true,
-		title : "Hour Detail",
+		title : "Product Detail",
 		isCreateNew : isCreateNew,
 		createLabel : createLabel,
+		isReportPage : isUpdateProduct,
 		isDisplaySaveBtn : isUpdateProduct
 	},
 	doNewAction = function() {
