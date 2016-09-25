@@ -1,0 +1,6 @@
+{
+  "name": "Productwidgetdemo",
+  "tagline": "It is Spring Boot Project for Code Challege",
+  "body": "### Welcome to Product Widget Demo.\r\nIt is a demo project that implemented by Spring Boot, AngularJS, HTML, CSS, and Twitter BootStrap.\r\nIt contains both Backend (Restfull Web Service) and Front-End (Single Page Application).\r\n\r\n### Backend\r\n1. Spring Boot\r\n2. Load Data from CSV files\r\n3. Support GET and POST HTTP\r\n4. Support JSON\r\n\r\n### Front-End\r\n1. Report - display highest, lowest, and average of products for each employee\r\n2. Products - display and add New Product\r\n3. Hours - display and add New Hour\r\n4. Employees - display and add New Employee\r\n\r\n### Authors and Contributors\r\nPao Im (paoim@yahoo.com)\r\n\r\n### Support or Contact\r\nHaving trouble with Pages? Check out our [documentation](https://help.github.com/pages) or [contact support](https://github.com/contact) and we’ll help you sort it out.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
